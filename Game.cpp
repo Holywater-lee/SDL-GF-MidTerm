@@ -26,10 +26,15 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, in
   SDL_FreeSurface(pTempSurface);
 
   SDL_QueryTexture(m_pTexture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+  m_sourceRectangle.x = 0;
+  m_sourceRectangle.y = 0;
+
   m_destinationRectangle.w = m_sourceRectangle.w;
   m_destinationRectangle.h = m_sourceRectangle.h;
-  m_destinationRectangle.x = m_sourceRectangle.x = 0;
-  m_destinationRectangle.y = m_sourceRectangle.y = 0;
+  m_destinationRectangle.x = 0;
+  m_destinationRectangle.y = 0;
+
+  printf("rider.bmp의 w: %d, h: %d\n", m_sourceRectangle.w, m_sourceRectangle.h);
 
   m_bRunning = true;
   return true;
