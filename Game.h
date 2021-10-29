@@ -4,7 +4,7 @@
 
 #include "SDL.h"
 #include "GameObject.h"
-#include "Player.h"
+#include <vector>
 
 class Game
 {
@@ -24,8 +24,7 @@ private:
   SDL_Renderer* m_pRenderer;
   bool m_bRunning;
 
-  GameObject m_go;
-  Player m_player;
+  std::vector<GameObject*> m_gameObjects;
 };
 
 #endif
